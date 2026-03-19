@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="color-scheme" content="light"/>
+  <title>Contact — TextTools</title>
+  <meta name="description" content="Get in touch with TextTools. Questions, feedback, or something broken — we read every message."/>
+  <meta name="keywords" content="contact texttools, texttools support, feedback"/>
+  <link rel="canonical" href="https://texttools.vercel.app/contact.html"/>
+  <meta property="og:title" content="Contact — TextTools"/>
+  <meta property="og:description" content="Get in touch with TextTools. We read every message."/>
+  <meta property="og:url" content="https://texttools.vercel.app/contact.html"/>
+  <meta property="og:type" content="website"/>
+  <meta name="twitter:card" content="summary"/>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <!-- Google AdSense — paste your AdSense script tag here when approved -->
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root { --bg:#faf0e8;--bg2:#f0e4d4;--surface:#fdf7f2;--surface-press:#f0e8df;--border:#e8d4c0;--border2:#dcc4ac;--accent:#c47d4a;--ink:#3d2b1f;--ink2:#86685a;--ink3:#b99e92;--radius:14px;--shadow:0 2px 14px rgba(140,80,40,0.08); }
+    html { scroll-behavior: smooth; color-scheme: light only; }
+    body { background:var(--bg);color:var(--ink);font-family:'Inter',sans-serif;font-weight:400;min-height:100vh;overflow-x:hidden; }
+    *:focus { outline:none; }
+    *:focus-visible { outline:2px solid rgba(196,125,74,0.5);outline-offset:3px;border-radius:6px; }
+    .doodles { position:fixed;inset:0;pointer-events:none;z-index:0;overflow:hidden; }
+    .doodles svg { position:absolute;fill:none;stroke:#b87040;stroke-linecap:round;stroke-linejoin:round;opacity:0.13; }
+    nav { position:sticky;top:0;z-index:100;background:rgba(250,240,232,0.92);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:0 clamp(1rem,5vw,3rem);height:58px;display:flex;align-items:center;justify-content:space-between; }
+    .nav-logo { font-size:1.05rem;font-weight:600;color:var(--ink);text-decoration:none;letter-spacing:-0.01em; }
+    .nav-logo span { color:var(--accent); }
+    .nav-links { display:flex;gap:clamp(1.25rem,3vw,2rem);list-style:none; }
+    .nav-links a { color:var(--ink2);text-decoration:none;font-size:0.85rem;transition:color 0.15s; }
+    .nav-links a:hover { color:var(--ink); }
+    .page-wrap { max-width:620px;margin:0 auto;padding:clamp(2.5rem,6vw,5rem) clamp(1rem,5vw,3rem);position:relative;z-index:1; }
+    .breadcrumb { display:flex;align-items:center;gap:0.5rem;font-size:0.78rem;color:var(--ink3);margin-bottom:2rem;opacity:0;animation:fadeUp 0.4s ease forwards; }
+    .breadcrumb a { color:var(--ink3);text-decoration:none;transition:color 0.15s; }
+    .breadcrumb a:hover { color:var(--ink2); }
+    .breadcrumb svg { stroke:var(--ink3); }
+    .page-header { margin-bottom:2.5rem;opacity:0;animation:fadeUp 0.4s ease 0.06s forwards; }
+    .page-header h1 { font-size:clamp(1.8rem,4vw,2.6rem);font-weight:600;letter-spacing:-0.02em;line-height:1.15;margin-bottom:0.6rem; }
+    .page-header p { color:var(--ink2);font-size:0.95rem;line-height:1.75; }
+    .contact-card { background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:clamp(1.5rem,4vw,2.5rem);box-shadow:var(--shadow);opacity:0;animation:fadeUp 0.4s ease 0.12s forwards; }
+    .contact-row { display:flex;align-items:center;gap:1rem;padding:1rem 0;border-bottom:1px solid var(--border); }
+    .contact-row:first-child { padding-top:0; }
+    .contact-row:last-child { border-bottom:none;padding-bottom:0; }
+    .contact-icon { width:36px;height:36px;background:rgba(196,125,74,0.1);border:1px solid rgba(196,125,74,0.2);border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0; }
+    .contact-icon svg { stroke:var(--accent); }
+    .contact-label { font-size:0.72rem;color:var(--ink3);text-transform:uppercase;letter-spacing:0.07em;margin-bottom:0.2rem; }
+    .contact-value { font-size:0.9rem;color:var(--ink);font-weight:500; }
+    .contact-value a { color:var(--accent);text-decoration:none; }
+    .contact-value a:hover { text-decoration:underline; }
+    .contact-note { margin-top:1.5rem;background:rgba(196,125,74,0.07);border:1px solid rgba(196,125,74,0.18);border-radius:10px;padding:1rem 1.1rem;font-size:0.82rem;color:var(--ink2);line-height:1.65;opacity:0;animation:fadeUp 0.4s ease 0.18s forwards; }
+    footer { border-top:1px solid var(--border);padding:clamp(1.5rem,3vw,2.5rem) clamp(1rem,5vw,3rem);background:var(--bg2);position:relative;z-index:1;margin-top:clamp(2rem,5vw,4rem); }
+    .footer-inner { max-width:860px;margin:0 auto;display:flex;flex-wrap:wrap;gap:1.5rem;justify-content:space-between;align-items:center; }
+    .footer-logo { font-size:0.95rem;font-weight:600;color:var(--ink);text-decoration:none; }
+    .footer-logo span { color:var(--accent); }
+    .footer-links { display:flex;gap:1.5rem;flex-wrap:wrap; }
+    .footer-links a { color:var(--ink2);text-decoration:none;font-size:0.8rem;transition:color 0.15s; }
+    .footer-links a:hover { color:var(--ink); }
+    .footer-right { font-size:0.78rem;color:var(--ink3); }
+    .footer-right a { color:var(--ink2);text-decoration:none; }
+    @keyframes fadeUp { from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)} }
+    @media(max-width:600px){.nav-links li:nth-child(3),.nav-links li:nth-child(4){display:none}}
+  </style>
+</head>
+<body>
+  <div class="doodles">
+    <svg width="56" height="50" style="top:40px;left:20px" stroke-width="1.6" viewBox="0 0 56 50"><path d="M4 4L52 4Q56 4 56 8L56 32Q56 36 52 36L20 36L8 48L8 36L4 36Q0 36 0 32L0 8Q0 4 4 4Z"/><line x1="10" y1="14" x2="46" y2="14"/><line x1="10" y1="24" x2="34" y2="24"/></svg>
+    <svg width="30" height="50" style="top:140px;left:6px" viewBox="0 0 30 50"><circle cx="8" cy="8" r="2.2" fill="#b87040" stroke="none"/><circle cx="22" cy="20" r="2" fill="#b87040" stroke="none"/><circle cx="8" cy="34" r="1.8" fill="#b87040" stroke="none"/><circle cx="22" cy="46" r="2.2" fill="#b87040" stroke="none"/></svg>
+    <svg width="54" height="54" style="top:40%;left:8px;transform:rotate(8deg)" stroke-width="1.6" viewBox="0 0 54 54"><path d="M10 44C10 18 38 8 46 26"/><polyline points="42,16 46,26 36,28"/></svg>
+    <svg width="50" height="60" style="top:16px;left:28%;transform:rotate(5deg)" stroke-width="1.6" viewBox="0 0 50 60"><path d="M25 6C13 6 7 14 7 22C7 30 13 36 17 40L17 48L33 48L33 40C37 36 43 30 43 22C43 14 37 6 25 6Z"/><line x1="19" y1="52" x2="31" y2="52"/><line x1="25" y1="1" x2="25" y2="5"/></svg>
+    <svg width="32" height="76" style="top:12px;right:64px;transform:rotate(18deg)" stroke-width="1.6" viewBox="0 0 32 76"><rect x="8" y="5" width="16" height="50" rx="2"/><polygon points="8,55 24,55 16,71"/><rect x="8" y="5" width="16" height="10" rx="2"/><line x1="8" y1="15" x2="24" y2="15"/></svg>
+    <svg width="24" height="24" style="top:30px;right:24%" stroke-width="1.6" viewBox="0 0 38 38"><polygon points="19,2 23,14 36,14 26,22 30,35 19,27 8,35 12,22 2,14 15,14"/></svg>
+    <svg width="44" height="44" style="top:110px;right:14px;transform:rotate(-18deg)" stroke-width="1.6" viewBox="0 0 48 48"><path d="M24 24C24 14 34 9 39 14C44 19 41 29 34 31C27 33 17 28 15 21C13 14 18 5 27 3C36 1 45 8 47 19"/></svg>
+    <svg width="30" height="40" style="top:148px;right:10px" viewBox="0 0 30 40"><circle cx="22" cy="6" r="2.2" fill="#b87040" stroke="none"/><circle cx="8" cy="16" r="1.8" fill="#b87040" stroke="none"/><circle cx="22" cy="28" r="2.2" fill="#b87040" stroke="none"/><circle cx="8" cy="38" r="2" fill="#b87040" stroke="none"/></svg>
+    <svg width="52" height="50" style="top:52%;right:8px" stroke-width="1.6" viewBox="0 0 52 50"><path d="M4 8 Q13 2 22 8 Q31 14 40 8 Q49 2 52 8"/><path d="M4 20 Q13 14 22 20 Q31 26 40 20 Q49 14 52 20"/><path d="M4 32 Q13 26 22 32 Q31 38 40 32 Q49 26 52 32"/></svg>
+    <svg width="60" height="50" style="bottom:80px;left:28px" stroke-width="1.6" viewBox="0 0 70 54"><path d="M5 5C5 5 20 3 35 9L35 51C35 51 20 45 5 49Z"/><path d="M65 5C65 5 50 3 35 9L35 51C35 51 50 45 65 49Z"/><line x1="35" y1="9" x2="35" y2="51"/></svg>
+    <svg width="40" height="36" style="bottom:88px;left:50%;transform:translateX(-50%)" stroke-width="1.6" viewBox="0 0 40 36"><path d="M20 33C20 33 2 21 2 10C2 5 6 2 11 2C14.5 2 17.5 4 20 7.5C22.5 4 25.5 2 29 2C34 2 38 5 38 10C38 21 20 33 20 33Z"/></svg>
+    <svg width="36" height="46" style="bottom:190px;right:22px;transform:rotate(8deg)" stroke-width="1.6" viewBox="0 0 36 46"><line x1="12" y1="7" x2="12" y2="36"/><line x1="28" y1="3" x2="28" y2="30"/><line x1="12" y1="7" x2="28" y2="3"/><ellipse cx="8" cy="38" rx="6" ry="4" transform="rotate(-15 8 38)"/><ellipse cx="24" cy="32" rx="6" ry="4" transform="rotate(-15 24 32)"/></svg>
+    <svg width="30" height="40" style="bottom:68px;right:12px" viewBox="0 0 30 40"><circle cx="8" cy="6" r="2.2" fill="#b87040" stroke="none"/><circle cx="22" cy="16" r="1.8" fill="#b87040" stroke="none"/><circle cx="6" cy="28" r="2.2" fill="#b87040" stroke="none"/><circle cx="22" cy="36" r="2.2" fill="#b87040" stroke="none"/></svg>
+  </div>
+
+  <nav>
+    <a href="/" class="nav-logo">Text<span>Tools</span></a>
+    <ul class="nav-links">
+      <li><a href="/#tools">Tools</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="privacy.html">Privacy</a></li>
+    </ul>
+  </nav>
+
+  <div class="page-wrap">
+    <div class="breadcrumb">
+      <a href="/">Home</a>
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+      <span>Contact</span>
+    </div>
+    <div class="page-header">
+      <h1>Say hello.</h1>
+      <p>Whether it's a bug, a suggestion, or just a thought — we're happy to hear it.</p>
+    </div>
+    <div class="contact-card">
+      <div class="contact-row">
+        <div class="contact-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
+        <div>
+          <div class="contact-label">Email</div>
+          <div class="contact-value"><a href="mailto:atom-wrek@proton.me">atom-wrek@proton.me</a></div>
+        </div>
+      </div>
+
+    </div>
+    <div class="contact-note">
+      We don't have a contact form — just send a plain email. We read every one and usually reply within a day or two.
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-inner">
+      <a href="/" class="footer-logo">Text<span>Tools</span></a>
+      <div class="footer-links"><a href="/#tools">Tools</a><a href="about.html">About</a><a href="contact.html">Contact</a><a href="privacy.html">Privacy</a></div>
+      <div class="footer-right"><span id="copyright"></span> &nbsp;·&nbsp; <a href="mailto:atom-wrek@proton.me">atom-wrek@proton.me</a></div>
+    </div>
+  </footer>
+  <script>
+    const y=new Date().getFullYear();
+    const s=document.getElementById('copyright');
+    if(s)s.textContent=y>2026?'© 2026–'+y+' TextTools':'© 2026 TextTools';
+  </script>
+</body>
+</html>
